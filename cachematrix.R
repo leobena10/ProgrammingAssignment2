@@ -1,12 +1,11 @@
-## If a loop of the same matrix inversion is needed, these two functions
-## will save the first calculation in the cache and use it in the next
-## loops, efectively saving computing time.
+## If a loop of the same matrix inversion is needed, these two functions will save the first 
+## calculation in the cache and use it in the next loops, efectively saving computing time.
 
 
 makeCacheMatrix <- function(x = matrix()) {
 
-## Takes a matrix to inverse as argument and outputs a list of four needed 
-## functions for the cacheSolve function next.
+	## Takes a matrix to inverse as argument and outputs a list of four needed 
+	## functions for the cacheSolve function next.
 	
 	m <- NULL
 
@@ -22,9 +21,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
 
-## Takes the list outputted fron makeCacheMatrix, checks cache for inverse 
-## matrix from previous calculation and if not found, calculates it and 
-## outputs it.
+	## Takes the list outputted fron makeCacheMatrix, checks cache for inverse 
+	## matrix from previous calculation and if not found, calculates it and outputs it.
 
 	m <- x$getinv() ##Gets the cached matrix
 
